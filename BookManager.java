@@ -1,36 +1,20 @@
 import java.util.List;
 
 public interface BookManager {
-    /**
-     * Añade un libro a la colección.
-     * @param book libro a añadir
-     */
-    void addBook(Book book);
-
-    /**
-     * Devuelve la lista de libros actuales.
-     * @return lista de libros
-     */
+    void addBook(Book book);  // Métodos para obtener, sortear y agregar un objeto libro
     List<Book> getBooks();
-
-    /**
-     * Busca libros por autor.
-     * @param author nombre del autor
-     * @return lista de libros escritos por ese autor
-     */
     List<Book> findBooksByAuthor(String author);
-
-    /**
-     * Ordena los libros por título y devuelve la lista ordenada.
-     * @return lista de libros ordenada por título
-     */
     List<Book> sortBooksByTitle();
+    List<Book> sortBooksByYearAsc();
+    List<Book> sortBooksByYearDesc();
 
-    /**
-     * Método por defecto que imprime todos los libros en consola.
-     */
+    // Filtra los libros publicados antes de un año dado
+    List<Book> findBooksPublishedBefore(int year);
+
+    // Filtra los libros cuyo título contiene una subcadena (case-insensitive)
+    List<Book> findBooksByTitleContaining(String substring);
+
     default void printAllBooks() {
-        // Recorre la lista de libros y los imprime usando su toString()
         getBooks().forEach(System.out::println);
     }
 }

@@ -3,12 +3,7 @@ public class Book {
     private String author;
     private int year;
 
-    /**
-     * Constructor de Book
-     * @param title  título del libro
-     * @param author autor del libro
-     * @param year   año de publicación
-     */
+    // Constructor de Book
     public Book(String title, String author, int year) {
         this.title = title;
         this.author = author;
@@ -45,10 +40,7 @@ public class Book {
         this.year = year;
     }
 
-    /**
-     * Representación en texto del libro.
-     * Formato: "Título — Autor (Año)"
-     */
+    // Representación en texto del libro con título y autor
     @Override
     public String toString() {
         return String.format("%s - %s (%d)", title, author, year);
